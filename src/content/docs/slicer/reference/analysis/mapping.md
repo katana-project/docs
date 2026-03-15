@@ -7,7 +7,7 @@ sidebar:
     variant: note
 ---
 
-slicer allows you to load obfuscation mappings in Tiny v1/v2 and ProGuard formats, which are then applied to all relevant parts of the UI, such as the class view and disassembly.
+slicer allows you to load obfuscation mappings in Tiny v1/v2, (T/C)SRG and ProGuard formats, which are then applied to all relevant parts of the UI, such as the class view and disassembly.
 You can also remove loaded mappings to revert the changes, or load a different mapping to replace the previous one.
 
 Some mapping formats also include local variable mappings and comments, these are not supported and will be ignored when loading.
