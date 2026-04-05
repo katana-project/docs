@@ -22,7 +22,41 @@ await context.editor.add("code", entry);
 // the entire lifecycle of the tab should be destroyed and recreated (hard refresh; the workspace entry should be read again, triggering a preload event)
 // or just signalled to reread the existing data (soft refresh; disassembling/reading)
 await context.editor.refresh("...", false);
+
+// register a new tab declaration type entirely!
+context.editor.register({
+  id: "my-script/tab-type",
+  label: "My Amazing Tab",
+  icon: { type: "html", value: "<svg>...</svg>" },
+  contextual: true, // indicates whether the tab requires an associated entry
+  preferredTypes: ["json"], // hint for the UI based on file extensions (without leading dot)
+  place(tabContext) {
+    // called when tab is placed, should return label (and optionally an icon)
+    return { label: tabContext.entry?.name };
+  },
+  render(tabContext) {
+    // called to get the content of the tab
+    const content = document.createElement("div");
+    content.innerText = "Custom tab behavior!";
+    return {
+      content,
+      destroy() {
+        // clean up tab state upon closure
+        content.remove();
+      },
+    };
+  },
+});
+
+// unregister the tab declaration
+context.editor.unregister("my-script/tab-type");
 ```
+
+:::tip
+
+The tab registration API has more to offer in the [TypeScript type definitions](https://github.com/katana-project/script/blob/main/index.d.ts).
+
+:::
 
 Each tab has an associated unique ID, a non-unique label and optionally a workspace entry:
 

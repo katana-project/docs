@@ -13,13 +13,15 @@ The options API goes hand in hand with [the event bus API](/slicer/script/event)
 
 :::
 
-Each option has common properties, like a `type`, `id` and an optional `label`, which defaults to the ID.
+Each option has common properties, like a `type`, `id`, `position`, an `icon` and an optional `label`, which defaults to the ID.
 
 ```js
 const option /*: Option */ = {
-  type: "...", // one of "button", "checkbox", "radio" or "group"; check the OptionType type
+  type: "...", // one of "button", "checkbox", "radio", "group" or "separator"; check the OptionType type
   id: "my-script-option",
   label: "My amazing option", // optional
+  position: "menu.file", // optional; e.g. "menu.root", "menu.file", etc.
+  icon: { type: "html", value: "<svg>...</svg>" }, // optional
   // type-specific properties, ...
 };
 
@@ -118,6 +120,19 @@ const group /*: GroupOption */ = {
       checked: false,
     },
   ],
+};
+
+// ...
+```
+
+## Separators
+
+If you want to logically separate some options from others, you can use a separator.
+
+```js
+const separator /*: Option */ = {
+  type: "separator",
+  id: "my-script-separator",
 };
 
 // ...

@@ -79,3 +79,4 @@ Check the [TypeScript type definitions](https://github.com/katana-project/script
 | --------------- | ------------------- | ------------------------------------------------------------------------------------ |
 | `preload`       | `PreloadEvent`      | Triggered when a class file is about to be loaded. You can modify the raw data here. |
 | `option_change` | `OptionChangeEvent` | Triggered when [an option](/slicer/script/options) is changed.                       |
+| `locale_change` | `LocaleChangeEvent` | Triggered when the UI locale changes.                                                |

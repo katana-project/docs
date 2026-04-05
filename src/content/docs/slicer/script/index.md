@@ -78,3 +78,12 @@ export default {
 Each context also has a parent context (`context.parent`), in most cases it will be the "root context".
 
 The root context represents the slicer scripting engine itself, you can identify it by the script name (`rootContext.script.name === "slicer"`) or the fact that it has no parent - it is the root after all (`rootContext.parent === null`).
+
+From the context, a myriad of different APIs are accessible for interacting with slicer and its interface:
+
+- [`context.editor`](/slicer/script/editor) for interacting with or spawning editor tabs
+- [`context.workspace`](/slicer/script/workspace) for modifying entries inside slicer's workspace
+- [`context.disasm`](/slicer/script/disasm) for invoking or registering decompilers/disassemblers
+- [`context.mapping`](/slicer/script/mapping) for loading, applying, and un-applying memory obfuscation mappings
+- [`context.i18n`](/slicer/script/i18n) for localizing your scripts with native formatting options
+- [`context.dispatchEvent`, `context.addEventListener`, ...](/slicer/script/event) for participating in slicer's event bus machinery

@@ -40,7 +40,8 @@ const myDisasm /*: Disassembler */ = {
 
   async class(
     name /*: string */, // an internal name of the disassembled class, i.e. com/example/Main
-    source /*: (name: string) => (Uint8Array | null) | Promise<Uint8Array | null> */
+    source /*: (name: string) => (Uint8Array | null) | Promise<Uint8Array | null> */,
+    resources /*: string[] */ // an array of fully qualified class names that may be requested from the source
   ) /*: string | Promise<string> */ {
     const data /*: Uint8Array | null */ = await source(name);
     if (!data) return ""; // this should never happen
@@ -52,7 +53,8 @@ const myDisasm /*: Disassembler */ = {
   async method(
     name /*: string */, // an internal name of the disassembled class, i.e. com/example/Main
     signature /*: string */, // a method name and descriptor joined together, i.e. main([Ljava/lang/String;)V
-    source /*: (name: string) => (Uint8Array | null) | Promise<Uint8Array | null> */
+    source /*: (name: string) => (Uint8Array | null) | Promise<Uint8Array | null> */,
+    resources /*: string[] */ // an array of fully qualified class names that may be requested from the source
   ) /*: string | Promise<string> */ {
     const data /*: Uint8Array | null */ = await source(name);
     if (!data) return ""; // this should never happen
