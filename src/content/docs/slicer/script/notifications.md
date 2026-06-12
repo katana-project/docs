@@ -19,3 +19,15 @@ context.notification.error("my_script/failed", {
     duration: 1000 * 10, // 10 seconds
 });
 ```
+
+All notification functions return an ID that can be used to update or dismiss the toast later.
+```js
+const id = context.notification.loading("my_script/loading");
+
+await doWork();
+
+context.notification.success("my_script/done", { id });
+
+// or dismiss it entirely
+context.notification.dismiss(id);
+```
