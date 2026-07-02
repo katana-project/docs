@@ -10,7 +10,7 @@ slicer includes several options that may improve the chances of successful disas
 
 :::note
 
-The scripting API `preload` [event](/slicer/script/event) is also implemented as a transformer, and it is run as the _last_ transformer in the pipeline.
+The scripting API `preload`/`transform` [event](/slicer/script/event) is also implemented as a transformer, and it is run as the _last_ transformer in the pipeline.
 
 :::
 

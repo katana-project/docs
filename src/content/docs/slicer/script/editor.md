@@ -19,7 +19,7 @@ context.editor.clear(); // closes all tabs with an associated entry
 await context.editor.add("code", entry);
 // mark a tab with an ID as dirty, making it refresh once the user makes it active
 // the "hard" boolean flag (optional) signals whether:
-// the entire lifecycle of the tab should be destroyed and recreated (hard refresh; the workspace entry should be read again, triggering a preload event)
+// the entire lifecycle of the tab should be destroyed and recreated (hard refresh; the workspace entry should be read again, triggering a transform event)
 // or just signalled to reread the existing data (soft refresh; disassembling/reading)
 await context.editor.refresh("...", false);
 

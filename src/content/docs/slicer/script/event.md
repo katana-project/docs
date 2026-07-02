@@ -75,8 +75,9 @@ Check the [TypeScript type definitions](https://github.com/katana-project/slicer
 
 :::
 
-| Event type      | Event object type   | Description                                                                          |
-| --------------- | ------------------- | ------------------------------------------------------------------------------------ |
-| `preload`       | `PreloadEvent`      | Triggered when a class file is about to be loaded. You can modify the raw data here. |
-| `option_change` | `OptionChangeEvent` | Triggered when [an option](/slicer/script/options) is changed.                       |
-| `locale_change` | `LocaleChangeEvent` | Triggered when the UI locale changes.                                                |
+| Event type      | Event object type   | Description                                                                                                                                |
+| --------------- | ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
+| `preload`       | `TransformEvent`    | Triggered when a class file is about to be loaded. You can modify the raw data here, you should probably use the `transform` event though. |
+| `transform`     | `TransformEvent`    | Triggered when a workspace entry is about to be interpreted (shown to the user), you can modify the raw data here.                         |
+| `option_change` | `OptionChangeEvent` | Triggered when [an option](/slicer/script/options) is changed.                                                                             |
+| `locale_change` | `LocaleChangeEvent` | Triggered when the UI locale changes.                                                                                                      |
