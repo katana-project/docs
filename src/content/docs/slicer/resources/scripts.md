@@ -9,6 +9,8 @@ If you have any cool scripts and want to share them, [make a PR](https://github.
 
 Clicking the script name will automatically open slicer and import it for you!
 
+*If you want to import a script hosted on GitHub Gist, make sure to use the __Raw__ link - inputting the gist link by itself will not work.*
+
 :::
 
 ## Disassembly
@@ -23,3 +25,5 @@ Clicking the script name will automatically open slicer and import it for you!
 ## Miscellaneous
 
 - Minecraft JAR importer ([GitHub Gist](https://gist.github.com/zlataovce/1b9ae2939eb295d9dc78c61e00e13e3a)) - A script for importing Minecraft JAR files easily.
+- JS/JSON formatter ([GitHub Gist](https://gist.github.com/zlataovce/651f873d0568dbd9442feeb84dc7b922)) - A script for automatically formatting JS/JSON(C/5) files using the js-beautify library.
+- JSON formatter ([GitHub Gist](https://gist.github.com/zlataovce/18bd7001bcacdfce05b900b9873ec024)) - A script for automatically formatting JSON files using JSON.parse+JSON.stringify (cleaner JSON output compared to js-beautify).
