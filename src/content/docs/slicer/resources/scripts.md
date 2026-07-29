@@ -9,7 +9,7 @@ If you have any cool scripts and want to share them, [make a PR](https://github.
 
 Clicking the script name will automatically open slicer and import it for you!
 
-*If you want to import a script hosted on GitHub Gist, make sure to use the __Raw__ link - inputting the gist link by itself will not work.*
+_If you want to import a script hosted on GitHub Gist, make sure to use the **Raw** link - inputting the gist link by itself will not work._
 
 :::
 

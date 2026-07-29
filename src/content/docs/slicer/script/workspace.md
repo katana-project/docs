@@ -26,7 +26,16 @@ Each entry has an associated unique name, an internal type and data reading func
 {
     type: "file", // "file", "class", "archive", "memory", ...
     name: "sample/math/BinarySearch.class", // the entry name
+    meta: { /* ... */ }, // non-essential metadata
     bytes: async function () { /* ... */ }, // gets the entry data as an Uint8Array
     blob: async function () { /* ... */ }, // gets the entry data as a Blob
 }
 ```
+
+## Metadata
+
+The `meta` object provides you with non-essential metadata, such as the last modification date, entry size
+and information about the entry if it comes from an archive (e.g. a ZIP/JAR; uncompressed size, compression method, CRC, ...).
+
+There are different types of metadata objects, delimited by a `type` identifier; their structure can be viewed in the
+[TypeScript type definitions](https://github.com/katana-project/slicer/blob/main/script/index.d.ts) for the scripting API.

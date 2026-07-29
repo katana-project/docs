@@ -13,14 +13,19 @@ context.notification.info("my_script/started");
 context.notification.success("my_script/done");
 context.notification.warning("my_script/warning");
 context.notification.error("my_script/failed", {
-    msgArgs: [/* ... */],
-    description: "my_script/failed/desc",
-    descriptionArgs: [/* ... */],
-    duration: 1000 * 10, // 10 seconds
+  msgArgs: [
+    /* ... */
+  ],
+  description: "my_script/failed/desc",
+  descriptionArgs: [
+    /* ... */
+  ],
+  duration: 1000 * 10, // 10 seconds
 });
 ```
 
 All notification functions return an ID that can be used to update or dismiss the toast later.
+
 ```js
 const id = context.notification.loading("my_script/loading");
 
