@@ -26,10 +26,14 @@ await context.editor.refresh("...", false);
 // register a new tab declaration type entirely!
 context.editor.register({
   id: "my-script/tab-type",
-  label: "My Amazing Tab",
-  icon: { type: "html", value: "<svg>...</svg>" },
-  contextual: true, // indicates whether the tab requires an associated entry
-  preferredTypes: ["json"], // hint for the UI based on file extensions (without leading dot)
+  label: "My Amazing Tab", // optional, defaults to the ID
+  icon: { type: "html", value: "<svg>...</svg>" }, // optional
+  contextual: true, // indicates whether the tab requires an associated entry; optional, defaults to false
+  prefers(entry) {
+    // optional
+    // hint for the UI whether your tab should be considered during automatic tab type detection
+    return entry.name.endsWith(".json");
+  },
   place(tabContext) {
     // called when tab is placed, should return label (and optionally an icon)
     return { label: tabContext.entry?.name };
