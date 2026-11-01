@@ -86,4 +86,6 @@ From the context, a myriad of different APIs are accessible for interacting with
 - [`context.disasm`](/slicer/script/disasm) for invoking or registering decompilers/disassemblers
 - [`context.mapping`](/slicer/script/mapping) for loading, applying, and un-applying memory obfuscation mappings
 - [`context.i18n`](/slicer/script/i18n) for localizing your scripts with native formatting options
+- [`context.navigation`](/slicer/script/navigation) for registering and changing shortcuts for your script or slicer itself
+- [`context.notification`](/slicer/script/notifications) for sending notifications to the user
 - [`context.dispatchEvent`, `context.addEventListener`, ...](/slicer/script/event) for participating in slicer's event bus machinery

@@ -48,6 +48,7 @@ const button /*: ButtonOption */ = {
   type: "button",
   id: "my-script-button",
   label: "My amazing button",
+  shortcut: "testingShortcut", // optional, a shortcut ID; check the Navigation API for more info
 };
 
 // ...
